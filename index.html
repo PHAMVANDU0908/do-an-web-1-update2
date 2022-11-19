@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./kiet/Bill.css">
+    <link rel="stylesheet" href="./themify-icons/themify-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body onload="show_product(),show_page()">
+    <div id="index-body">
+        <!-- ---------------------------header(start)<Kiet thuc hien>--------------------- -->
+        <div id="index-header">
+            <h class="container">
+                <a href="" id="logo">
+                    <img src="/Hình ảnh/LOGO1.jpg">
+                </a>
+                <ul id="main-menu">
+                    <li><a href="">Trang Chủ</a></li>
+                    <li><a href="">Sản Phẩm</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Sản Phẩm 1</a></li>
+                            <li><a href="">Sản Phẩm 2</a>
+                                <ul class="sub-menu">
+                                    <li><a href="">Sản Phẩm 2.1</a></li>
+                                    <li><a href="">Sản Phẩm 2.2</a></li>
+                                    <li><a href="">Sản Phẩm 2.3</a></li>
+                                    <li><a href="">Sản Phẩm 2.4</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Sản Phẩm 3</a></li>
+                            <li><a href="">Sản Phẩm 4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Liên Hệ</a></li>
+                </ul>
+            </h>
+        </div>
+
+        <!-- --------------------------------------- header(end)-------------------------------- -->
+
+
+
+        <!-- ----------------------------------------index-nav---------------------------------- -->
+        <div id="index-nav">
+            <!-- thanh tim kiem san pham va gio hang -->
+            <input id="search" type="text" class="input-field" placeholder="search" oninput="search_product()">
+            <span class="button-search-product">
+                <button onclick="search_product()"><i class="ti-search"></i></button>
+            </span>
+            <span class="button-view-shopping-cart">
+                <div class="count-on-icon-shopping-cart" id="count-on-icon-shopping"></div>
+                <button onclick="view_shopping_cart()"><i class="ti-shopping-cart"></i></button>
+                <h3 style="color:black">giỏ hàng</h3>
+                <div id="anounce">
+                    <!-- <div id="notification_after_click_chonmua">
+                        ✅ Thêm sản phẩm thành công
+                    </div> -->
+                </div>
+            </span>
+            <!-- <a href="shopping_cart.html"><i class="ti-shopping-cart"></i></a> -->
+        </div>
+        <!-- --------------------------------------------index-nav-end--------------------------- -->
+
+
+
+
+        <!-- -----------------------------slider(start)<Kiet thuc hien>-------------------------->
+        <section id="index-slider">
+            <div class="aspect-ratio-169">
+                <img src="./anhslider/logo Slider1.jpg">
+                <img src="./anhslider/Logo Slider2.jpg">
+                <img src="./anhslider/logo Slider 3.jpg">
+                <img src="./anhslider/logo Slider 4.jpg">
+                <img src="./anhslider/logo Slider 5.jpg">
+            </div>
+            <div class="dot-Container">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </section>
+
+        <!-- ----------------------------------slider(end)------------------------------->
+
+
+
+
+
+
+        <!-- ---------------------------------content(start)----------------------------->
+        <div id="index-content">
+            <!-- ---------------------phan loc sna pham----------------------- -->
+            <!-- <div id="left">Left <br> <br> <br> <br> <br> <br> </div> -->
+            <!-- --------------phan hien thi danh sach san pham----------- -->
+            <div id="right"></div>
+            
+            <!-- <div id="show_product_search"></div> -->
+
+            <div id="count-of-page-product">
+                <div id="show-page">
+                    <!-- <div class="page"></div> -->
+                </div>
+            </div>
+            <!-- -------------------phan hien thi chi tiet san pham----------------- -->
+            <div id="show_detail_item">
+            </div>
+            <!-- --------------------hien thi cac san pham search------------------ -->
+            
+            <!-- -------------------show gio hang---------------------- -->
+            <div id="show_product">
+                <div id="div_shopping_cart">
+                    <div id="header-shopping-cart">
+                        <p>Giỏ Hàng</p>
+                        <button onclick="back_to_page()"><i class="ti-close"></i></button>
+                    </div>
+                    <div id="nav-shopping-cart">
+                        <div class="grip7">
+                            <span>Sản phẩm</span>
+                        </div>
+                        <div class="grip3">
+                            <span>Đơn giá</span>
+                        </div>
+                        <div class="grip2">
+                            <span>Số lượng</span>
+                        </div>
+                        <div class="grip3">
+                            <span>Thành tiền</span>
+                        </div>
+                        <div class="grip1">
+                            <span>
+                                <img
+                                    src="https://thumbs.dreamstime.com/b/trash-bin-icon-trash-bin-icon-white-background-116649471.jpg">
+                            </span>
+                        </div>
+                    </div>
+
+                    <div id="show_product_in_shopping_cart">
+
+                    </div>
+                    <div id="total-price-in-shopping-cart">
+                        <span id="totalprice">tong tien</span>
+                    </div>
+                    <div id="footer-shopping-cart">
+                        <button onclick="delete_all_product()">Xoa tat ca</button>
+                        <button onclick="pay()">Thanh toán</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- -------------------------------thong bao khi nguoi dung xoa san pham----------------- -->
+            <div id="notification-body">
+                <div id="notification">
+                    <img src="./icon/attention.png" alt="">
+                    <h4>Xoá sản phẩm</h4>
+                    <span> Bạn có muốn xóa sản phẩm đang chọn?</span>
+                    <div id="button-confirm-delete" onclick="confirm_delete()"><button>Xác Nhận</button></div>
+                    <div id="button-confirm-cancel" onclick="go_back_shopping_cart()"><button>Hủy</button></div>
+                </div>
+            </div>
+        </div>
+        <!-- ------------------------------------content(end)------------------------------->
+
+        <!-- -------------------------------------BILL_---------------------------------- -->
+        <div id="bill-content">
+
+            <div class="content-container">
+                <div id="content-container-header">
+                    <h3>Đơn hàng</h3>
+
+                    <div id="show-product-in-bill"></div>
+                    <!-- !-- <ul></ul> -->
+                    <!-- -------------------------------- -->
+
+
+                    <!-- <div id="product-in-bill">
+                        <img src="./anhdonghonam/Aouke AK05-2.png" alt="">
+                        <h3>Namejasjdajsda</h3>
+                        <h3>so luong </h3>
+                        <h3>tong tien</h3>
+                    </div>
+
+
+                    <div id="product-in-bill">
+                        <img src="./anhdonghonam/Aouke AK05-2.png" alt="">
+                        <h3>Namejasjdajsda</h3>
+                        <h3>so luong </h3>
+                        <h3>tong tien</h3>
+                    </div> -->
+
+
+
+
+
+
+
+
+
+
+                    <!-- -------------------------------- -->
+                    <!-- <br /> -->
+                </div>
+                <br><br>
+                <h4 id="money-to-be-pay">Thành tiền: 900 000 đ</h4>
+                <br><br>
+                <div class="content-container-body">
+                    <h3>Thông tin giao hàng</h3>
+                    <div>
+                        <label for="">
+                            <h4>Hình thức giao hàng</h4>
+                        </label>
+                        <div class="type">
+                            <input type="radio" id="save" name="order" value="save" />
+                            <label for="save"><span>Giao hàng tiết kiệm</span></label>
+                        </div>
+                        <div class="type">
+                            <input type="radio" id="quick" name="order" value="quick" />
+                            <label for="quick"><span>Giao hàng nhanh</span></label>
+                        </div>
+                        <div class="type">
+                            <input type="radio" id="normal" name="order" value="normal" />
+                            <label for="normal"><span>Giao hàng</span></label>
+                        </div>
+                        <br>
+                        <span class="ERROR"></span>
+                    </div>
+                    <div>
+                        <label for="">
+                            <h4>Địa chỉ giao hàng</h4>
+                        </label>
+                        <input type="text" name="address">
+                        <br>
+                        <span class="ERROR"></span>
+                    </div>
+                    <div>
+                        <label for="">
+                            <h4>Tên người nhận</h4>
+                        </label>
+                        <input type="text" name="name">
+                        <br>
+                        <span class="ERROR"></span>
+                    </div>
+                    <div>
+                        <label for="">
+                            <h4>Số điện thoại</h4>
+                        </label>
+                        <input type="text" name="phone">
+                        <br>
+                        <span class="ERROR"></span>
+                    </div>
+                    <div class="order"><button>ĐẶT MUA</button></div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- ------------------------------------------Bill(end)---------------------------------- -->
+
+
+
+        <!-- --------------------------------------------footer(start)<Khoa thuc hien>---------------------------------- -->
+        <div id="index-footer">
+            <div class="row">
+                <div class="centerfooter">
+                    <div class="footer1">
+                        <img src="sgu.jpg">
+                    </div>
+                    <div class="footer2">
+                        <div class="underline">
+                            <h4>FOLLOW US</h4>
+                        </div>
+                        <li><a href=""><b class="fa fa-facebook-official" aria-hidden="true"></b></a></li>
+                        <li><a href=""><b class="fa fa-instagram" aria-hidden="true"></b></a></li>
+
+                    </div>
+                    <div class="footer3">
+                        <div class="underline">
+                            <h4>CONTANT US</h4>
+                        </div>
+                        <div class="address"> 273 An Dương Vương, Phường 3, Quận 5, Thành phố Hồ Chí Minh</div>
+                    </div>
+                </div>
+                <div class="row"></div>
+            </div>
+
+            <!-- ----------------------------------footer(end)----------------------------------- -->
+        </div>
+        <script src="./index.js"></script>
+        <script src="./admin.js"></script>
+        <!-- <script src="./shopping_cart.js"></script> -->
+</body>
+
+</html>
+
